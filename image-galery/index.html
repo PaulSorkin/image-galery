@@ -7,43 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">    <title>image-galery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <title>image-galery</title>
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="heading">
-                <div class="logo-div">
-                    <img src="./assets/svg/camera-svgrepo-com.svg" alt="logo" class="logo">
-                    <!--<svg src="./assets/svg/camera.svg" alt="logo" class="logo"></svg>-->
-                </div>
-                <h1>Unsplash API</h1>
+<div class="darken hidden"></div>
+<header class="header">
+    <div class="container header-container">
+        <div class="heading">
+            <div class="logo-div">
+                <img src="./assets/svg/camera-svgrepo-com.svg" alt="logo" class="logo">
+                <!--<svg src="./assets/svg/camera.svg" alt="logo" class="logo"></svg>-->
             </div>
-            <div class="search">
-                <input id="input" type="search" class="search-field" placeholder="Search..." autofocus>
-                <img src="./assets/svg/search-svgrepo-com.svg" alt="search" class="search-icon">
-            </div>
+            <h1>Unsplash API</h1>
         </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <div class="gallery-container" id="galleyContainer"></div>
+        <div class="search">
+            <label for="input"></label>
+            <input id="input" name="search" type="search" class="search-field" placeholder="Search..." autofocus>
+            <img src="./assets/svg/search-svgrepo-com.svg" alt="search" class="search-icon">
         </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-data">
-                <p class="footer-data-item">©</p>
-                <p class="footer-data-item">2022</p>
-                <a href="https://github.com/PaulSorkin" class="github-link footer-data-item">github</a>
-            </div>
-            <a href="https://rs.school/js-stage0/" class="rss-logo"></a>
+    </div>
+</header>
+<main class="main">
+    <div class="container">
+        <div class="gallery-container" id="galleyContainer"></div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-data">
+            <p class="footer-data-item">©</p>
+            <p class="footer-data-item">2021</p>
+            <a href="https://github.com/PaulSorkin" class="github-link footer-data-item">Paul Sorkin</a>
         </div>
-        </div>
-    </footer>
+        <a href="https://rs.school/js-stage0/" class="rss-logo"></a>
+    </div>
+</footer>
+<div class="modal-window hidden">
+    <img src="" alt="modal" class="modal_pic">
+</div>
 <script src="index.js"></script>
 </body>
 

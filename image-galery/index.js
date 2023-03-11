@@ -3,6 +3,10 @@ const topic = document.querySelector('.search-field');
 const content = document.querySelector('.gallery-container');
 const searchImage = document.querySelector('.search-icon');
 
+const body = document.querySelector('body');
+const darken = document.querySelector('.darken');
+const modalWindow = document.querySelector('.modal-window');
+
 getData();
 
 // Fetch data
@@ -19,7 +23,7 @@ function showData(data) {
         img.classList.add('gallery-img');
         img.src = data.results[i].urls.regular;
         img.alt = data.results[i].alt_description;
-        img.addEventListener('click', () => ale(data.results[i].alt_description))
+        img.addEventListener('click', () => modalOpen(img.src, img.alt));
         content.append(img);
     }
 }
@@ -41,20 +45,25 @@ document.addEventListener('keyup', theKey => {
 // search after magnifier click
 searchImage.addEventListener('click', chooseTopic);
 
-
-function ale(message) {
-    alert(message);
+// Modal window open
+function modalOpen(src, alt) {
+    darken.classList.remove('hidden');
+    darken.addEventListener('click', modalClose);
+    modalWindow.classList.remove('hidden');
+    body.classList.add('no-overflow');
+    const pic = document.querySelector('.modal_pic');
+    pic.src = src;
+    pic.alt = alt;
+    document.addEventListener('keyup', theKey => {
+        if (theKey.code === 'Escape') modalClose()
+    });
 }
 
-
-    //Create image in the container - WORKS
-    /*const img = document.createElement('img');
-    img.classList.add('gallery-img');
-    img.src = 'https://images.unsplash.com/photo-1597222312070-5f36dc3918fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDAzNjN8MHwxfHNlYXJjaHwxfHxwZXJfcGFnZSUzRDMwfGVufDB8MHx8fDE2NDQ2NTA4NzY&ixlib=rb-1.2.1&q=80&w=1080';
-    img.alt = 'image';
-    galleyContainer.append(img);*/
-
-    //get an array of urls for pics - WORKS
-   // newUrls = data.results.map((el) => {console.log(el.urls.regular)})
+// Modal window close
+function modalClose() {
+    body.classList.remove('no-overflow');
+    darken.classList.add('hidden');
+    modalWindow.classList.add('hidden');
+}
 
    // my key: 2H0jtKmrZwpjrcnn9F5U0OJGu7MLmzBNaMMxf5zFZ1Y
