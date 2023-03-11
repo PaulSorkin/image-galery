@@ -1,2 +1,2 @@
-# [Deploy](https://rolling-scopes-school.github.io/paulsorkin-JSFEPRESCHOOL/image-galery/)
+# [Deploy](https://paulsorkin.github.io/image-galery/)
 
